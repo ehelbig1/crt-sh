@@ -1,0 +1,6 @@
+[workspace]
+
+members = [
+    "crt-sh",
+    "crt-sh-data"
+]
