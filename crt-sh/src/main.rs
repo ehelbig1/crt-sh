@@ -6,9 +6,10 @@ struct Opt {
     identity: String,
 }
 
-fn main() {
+#[tokio::main]
+async fn main() {
     let opt = Opt::from_args();
     let crt_sh_datasource = crt_sh_data::CrtShDatasource::new();
-    let certificates = crt_sh_datasource.search_identity(&opt.identity).unwrap();
+    let certificates = crt_sh_datasource.search_identity(&opt.identity).await.unwrap();
     dbg!(certificates);
 }

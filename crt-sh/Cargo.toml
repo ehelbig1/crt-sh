@@ -8,3 +8,4 @@ edition = "2021"
 [dependencies]
 crt_sh_data = { path = "../crt-sh-data" }
 structopt = "0.3.26"
+tokio = { version = "1.25.0", features = ["full"] }
