@@ -3,15 +3,15 @@ use serde::Deserialize;
 
 #[derive(Debug, PartialEq, Deserialize)]
 pub struct Certificate {
-    issuer_ca_id: usize,
-    issuer_name: String,
-    common_name: String,
-    name_value: String,
-    id: usize,
-    entry_timestamp: chrono::NaiveDateTime,
-    not_before: chrono::NaiveDateTime,
-    not_after: chrono::NaiveDateTime,
-    serial_number: String,
+    pub issuer_ca_id: usize,
+    pub issuer_name: String,
+    pub common_name: String,
+    pub name_value: String,
+    pub id: usize,
+    pub entry_timestamp: chrono::NaiveDateTime,
+    pub not_before: chrono::NaiveDateTime,
+    pub not_after: chrono::NaiveDateTime,
+    pub serial_number: String,
 }
 
 #[cfg(test)]

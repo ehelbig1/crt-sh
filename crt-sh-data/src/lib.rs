@@ -3,7 +3,7 @@ use url;
 use async_trait::async_trait;
 
 mod error;
-mod model;
+pub mod model;
 
 #[async_trait]
 pub trait Datasource {
