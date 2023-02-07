@@ -1,13 +1,14 @@
+use async_trait::async_trait;
 use reqwest;
 use url;
-use async_trait::async_trait;
 
 mod error;
 pub mod model;
 
 #[async_trait]
 pub trait Datasource {
-    async fn search_identity(self, identity: &str) -> Result<Vec<model::Certificate>, error::Error>;
+    async fn search_identity(self, identity: &str)
+        -> Result<Vec<model::Certificate>, error::Error>;
 }
 
 pub struct CrtShDatasource {
@@ -24,7 +25,10 @@ impl CrtShDatasource {
 
 #[async_trait]
 impl Datasource for CrtShDatasource {
-    async fn search_identity(self, identity: &str) -> Result<Vec<model::Certificate>, error::Error> {
+    async fn search_identity(
+        self,
+        identity: &str,
+    ) -> Result<Vec<model::Certificate>, error::Error> {
         let url = format!("{}?q={}&output=json", &self.base_url, &identity);
         let response = reqwest::get(&url).await;
 
